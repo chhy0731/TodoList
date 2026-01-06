@@ -1,0 +1,17 @@
+#body {
+  padding: 100px;
+}
+#loginform {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#loginform input {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+#greeting {
+  margin: 0 auto;
+  text-align: center;
+}
