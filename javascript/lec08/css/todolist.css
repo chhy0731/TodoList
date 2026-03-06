@@ -62,3 +62,13 @@
 #todolist button:hover {
     cursor: pointer;
 }
+
+.badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 6px;
+    height: 6px;
+    background: #ff6b6b;
+    border-radius: 50%;
+}
