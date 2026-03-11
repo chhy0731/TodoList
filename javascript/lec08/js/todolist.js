@@ -8,6 +8,9 @@ todoform.addEventListener('submit', handleTodoSummit);
 let DBLists = [];
 let CurrentDate;
 const DBLIST_KEY = 'DBLISTS';
+// const currentUser = localStorage.getItem('myusername');
+// const DBLIST_KEY = `DBLISTS_${currentUser}`;
+const currentUser = localStorage.getItem('myusername');
 
 function TodoList(date) {
     this.date = date;
@@ -29,7 +32,7 @@ function displayTodoItem(todoObj) {
     const todo_cur_span = document.createElement('span');
     const todo_remove_btn = document.createElement('button');
 
-    todo_cur_span.innerText = todoObj.newTodo;
+    todo_cur_span.innerText = todoObj.text;
 
     todo_cur_li.dataset.id = todoObj.id;
 
@@ -83,6 +86,8 @@ function handleTodoSummit(parm) {
     addNewTodo(CurrentDate, curTodo);
 
     saveDBListLocalStorage();
+
+    loadcurrentTodo();
     syncCalendar();
 }
 
@@ -107,6 +112,7 @@ function addNewTodo(date, newTodo) {
     };
 
     curTodoList.todos.push(todoObj);
+    return todoObj;
 }
 
 function saveDBListLocalStorage() {
