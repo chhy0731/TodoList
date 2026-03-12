@@ -97,7 +97,7 @@
     transition: 0.3s;
     box-sizing: border-box;
 
-    background-color: rgb(6, 165, 19);
+    background-color: rgba(6, 165, 19, 0.7);
     border-radius: 5px;
 
     display: flex;
@@ -144,7 +144,7 @@
     flex-shrink: 0;
 
     color: white;
-    background-color: red;
+    background-color: rgba(255, 9, 9, 0.7);
 
     font-weight: 700;
 

@@ -49,8 +49,8 @@ function syncCalendar() {
                     start: list.date,
                     allDay: true,
                     display: 'block',
-                    backgroundColor: 'rgb(177, 94, 245)',
-                    borderColor: 'rgb(177,94,245)',
+                    backgroundColor: 'rgba(177, 94, 245, 0.9)',
+                    borderColor: 'rgb(177, 94, 245, 0.9)',
                 });
             });
         }
