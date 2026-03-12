@@ -33,7 +33,6 @@ function displayTodoItem(todoObj) {
     const todo_remove_btn = document.createElement('button');
 
     todo_cur_span.innerText = todoObj.text;
-
     todo_cur_li.dataset.id = todoObj.id;
 
     todo_remove_btn.innerText = 'X';

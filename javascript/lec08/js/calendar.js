@@ -4,8 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
     calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
+        fixedWeekCount: false,
         selectable: true,
         events: [],
+        dayMaxEvents: true,
+        aspectRatio: 1.5,
+        expandRows: true,
 
         dateClick: function (info) {
             console.log('Clicked event occurs : date = ' + info.dateStr);
@@ -45,7 +49,8 @@ function syncCalendar() {
                     start: list.date,
                     allDay: true,
                     display: 'block',
-                    backgroundColor: 'rgb(255, 7, 7)',
+                    backgroundColor: 'rgb(177, 94, 245)',
+                    borderColor: 'rgb(177,94,245)',
                 });
             });
         }
