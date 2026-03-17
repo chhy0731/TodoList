@@ -1,0 +1,21 @@
+#calendar {
+    flex: 2;
+
+    /* max-width: 900px; */
+    height: 80vh;
+
+    color: white;
+}
+.fc-daygrid-event {
+    margin-bottom: 4px;
+    border-radius: 6px;
+    padding: 2px 4px;
+}
+
+.fc-daygrid-body {
+    height: 100%;
+}
+
+.fc-daygrid-day-frame {
+    height: 100px;
+}

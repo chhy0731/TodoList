@@ -1,0 +1,32 @@
+#body {
+    padding: 100px;
+}
+#loginform {
+    text-align: center;
+    font-size: 2rem;
+}
+
+#loginform input:nth-child(1) {
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+    width: 240px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#loginform input:nth-child(1):hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/*input의 첫번째 요소에 focus 했을 때 */
+#loginform input:nth-child(1):focus {
+    outline: none;
+    border-bottom: 3px solid white;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#greeting {
+    margin: 2 auto;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+}
