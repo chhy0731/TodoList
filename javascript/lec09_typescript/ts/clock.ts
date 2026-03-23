@@ -1,10 +1,11 @@
-"use strict";
-const header2 = document.querySelector('#clock');
+const header2 = document.querySelector<HTMLElement>('#clock');
+
 function updateClock() {
-    if (!header2)
-        return;
+    if (!header2) return;
+
     const curtime = new Date();
-    const timeString = String(curtime.getHours()).padStart(2, '0') +
+    const timeString =
+        String(curtime.getHours()).padStart(2, '0') +
         ':' +
         String(curtime.getMinutes()).padStart(2, '0') +
         ':' +
@@ -14,4 +15,3 @@ function updateClock() {
 }
 updateClock();
 setInterval(updateClock, 1000);
-//# sourceMappingURL=clock.js.map

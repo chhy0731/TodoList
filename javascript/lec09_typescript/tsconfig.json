@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    /* 기본 설정 */
+    "target": "ES6",
+    "module": "ES6",
+
+    /* 폴더 구조 */
+    "rootDir": "./ts",
+    "outDir": "./js",
+
+    "lib": ["ES2017", "DOM"],
+    /* 엄격 모드 (추천) */
+    "strict": true,
+
+    /* 모듈 관련 */
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+
+    /* JS 호환 */
+    "allowJs": true,
+    "checkJs": false,
+
+    /* 출력 관련 */
+    "sourceMap": true,
+    "removeComments": false,
+
+    /* 기타 편의 */
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+
+  /* 컴파일 대상 */
+  "include": ["ts/**/*"],
+
+  /* 제외 */
+  "exclude": ["node_modules"]
+}

@@ -1,8 +1,22 @@
-var calendar;
+// import { Calendar, EventInput } from '@fullcalendar/core';
+// import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction';
+import {
+    setCurrentDate,
+    loadcurrentTodo,
+    loadTodoInit,
+    DBLists,
+} from './todolist.js';
+// import dayGridPlugin from '@fullcalendar/daygrid';
+
+declare const FullCalendar: any;
+let calendar: any = null;
 
 document.addEventListener('DOMContentLoaded', function () {
-    var calendarEl = document.getElementById('calendar');
+    const calendarEl = document.getElementById('calendar');
+    if (!calendarEl) return;
+
     calendar = new FullCalendar.Calendar(calendarEl, {
+        // plugins: [interactionPlugin, dayGridPlugin],
         initialView: 'dayGridMonth',
         fixedWeekCount: false,
         selectable: true,
@@ -11,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         aspectRatio: 1.5,
         expandRows: true,
 
-        dateClick: function (info) {
+        dateClick: function (info: any) {
             console.log('Clicked event occurs : date = ' + info.dateStr);
 
             setCurrentDate(info.dateStr);
@@ -25,18 +39,22 @@ document.addEventListener('DOMContentLoaded', function () {
     calendar.render();
 });
 
-function addEventToCalendar(event) {
+function addEventToCalendar(event: any): void {
+    if (!calendar) return;
     calendar.addEvent(event);
 }
 
-function removeEventFromCalendar(id) {
-    var calendarEvent = calendar.getEventById();
+function removeEventFromCalendar(id: string) {
+    if (!calendar) return;
+
+    const calendarEvent = calendar.getEventById(id);
+
     if (calendarEvent) {
         calendarEvent.remove();
     }
 }
 
-function syncCalendar() {
+export function syncCalendar() {
     if (!calendar) return;
     calendar.removeAllEvents(); // 기존 이벤트 삭제
 
@@ -44,7 +62,7 @@ function syncCalendar() {
         if (list.todos.length > 0) {
             list.todos.forEach((todoObj) => {
                 calendar.addEvent({
-                    id: todoObj.id,
+                    id: String(todoObj.id),
                     title: todoObj.text,
                     start: list.date,
                     allDay: true,
